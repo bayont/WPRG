@@ -4,20 +4,20 @@ services:
     build:
       context: .
       dockerfile: nginx/Dockerfile
-    ports: 
+    ports:
       - "8080:80"
     networks:
       - internal
     volumes:
-      - ./data/:/var/www/html/
+      - ../:/var/www/html/
       - ./logs/nginx:/var/log/nginx/
   php:
     image: php:fpm-alpine
     networks:
       - internal
     volumes:
-      - ./data/:/var/www/html/
-            - ./logs/php.log:/var/log/fpm-php.www.log
+      - ../:/var/www/html/
+      - ./logs/php.log:/var/log/fpm-php.www.log
 networks:
   internal:
     driver: bridge

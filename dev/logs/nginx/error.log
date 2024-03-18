@@ -358,3 +358,164 @@
 2024/03/16 17:39:41 [notice] 1#1: signal 17 (SIGCHLD) received from 29
 2024/03/16 17:39:41 [notice] 1#1: worker process 29 exited with code 0
 2024/03/16 17:39:41 [notice] 1#1: exit
+2024/03/18 19:36:56 [notice] 1#1: using the "epoll" event method
+2024/03/18 19:36:56 [notice] 1#1: nginx/1.25.4
+2024/03/18 19:36:56 [notice] 1#1: built by gcc 12.2.1 20220924 (Alpine 12.2.1_git20220924-r10) 
+2024/03/18 19:36:56 [notice] 1#1: OS: Linux 6.1.0-18-amd64
+2024/03/18 19:36:56 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2024/03/18 19:36:56 [notice] 1#1: start worker processes
+2024/03/18 19:36:56 [notice] 1#1: start worker process 29
+2024/03/18 19:36:56 [notice] 1#1: start worker process 30
+2024/03/18 19:38:29 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2024/03/18 19:38:29 [notice] 29#29: gracefully shutting down
+2024/03/18 19:38:29 [notice] 30#30: gracefully shutting down
+2024/03/18 19:38:29 [notice] 29#29: exiting
+2024/03/18 19:38:29 [notice] 30#30: exiting
+2024/03/18 19:38:29 [notice] 29#29: exit
+2024/03/18 19:38:29 [notice] 30#30: exit
+2024/03/18 19:38:29 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2024/03/18 19:38:29 [notice] 1#1: worker process 30 exited with code 0
+2024/03/18 19:38:29 [notice] 1#1: signal 29 (SIGIO) received
+2024/03/18 19:38:29 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2024/03/18 19:38:29 [notice] 1#1: worker process 29 exited with code 0
+2024/03/18 19:38:29 [notice] 1#1: exit
+2024/03/18 19:38:34 [notice] 1#1: using the "epoll" event method
+2024/03/18 19:38:34 [notice] 1#1: nginx/1.25.4
+2024/03/18 19:38:34 [notice] 1#1: built by gcc 12.2.1 20220924 (Alpine 12.2.1_git20220924-r10) 
+2024/03/18 19:38:34 [notice] 1#1: OS: Linux 6.1.0-18-amd64
+2024/03/18 19:38:34 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2024/03/18 19:38:34 [notice] 1#1: start worker processes
+2024/03/18 19:38:34 [notice] 1#1: start worker process 23
+2024/03/18 19:38:34 [notice] 1#1: start worker process 24
+2024/03/18 19:49:35 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2024/03/18 19:49:35 [notice] 23#23: gracefully shutting down
+2024/03/18 19:49:35 [notice] 23#23: exiting
+2024/03/18 19:49:35 [notice] 24#24: gracefully shutting down
+2024/03/18 19:49:35 [notice] 24#24: exiting
+2024/03/18 19:49:35 [notice] 23#23: exit
+2024/03/18 19:49:35 [notice] 24#24: exit
+2024/03/18 19:49:35 [notice] 1#1: signal 17 (SIGCHLD) received from 24
+2024/03/18 19:49:35 [notice] 1#1: worker process 24 exited with code 0
+2024/03/18 19:49:35 [notice] 1#1: signal 29 (SIGIO) received
+2024/03/18 19:49:35 [notice] 1#1: signal 17 (SIGCHLD) received from 23
+2024/03/18 19:49:35 [notice] 1#1: worker process 23 exited with code 0
+2024/03/18 19:49:35 [notice] 1#1: exit
+2024/03/18 19:49:35 [notice] 1#1: using the "epoll" event method
+2024/03/18 19:49:35 [notice] 1#1: nginx/1.25.4
+2024/03/18 19:49:35 [notice] 1#1: built by gcc 12.2.1 20220924 (Alpine 12.2.1_git20220924-r10) 
+2024/03/18 19:49:35 [notice] 1#1: OS: Linux 6.1.0-18-amd64
+2024/03/18 19:49:35 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2024/03/18 19:49:35 [notice] 1#1: start worker processes
+2024/03/18 19:49:35 [notice] 1#1: start worker process 28
+2024/03/18 19:49:35 [notice] 1#1: start worker process 29
+2024/03/18 19:53:04 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2024/03/18 19:53:04 [notice] 28#28: gracefully shutting down
+2024/03/18 19:53:04 [notice] 28#28: exiting
+2024/03/18 19:53:04 [notice] 28#28: exit
+2024/03/18 19:53:04 [notice] 29#29: gracefully shutting down
+2024/03/18 19:53:04 [notice] 29#29: exiting
+2024/03/18 19:53:04 [notice] 29#29: exit
+2024/03/18 19:53:04 [notice] 1#1: signal 17 (SIGCHLD) received from 28
+2024/03/18 19:53:04 [notice] 1#1: worker process 28 exited with code 0
+2024/03/18 19:53:04 [notice] 1#1: signal 29 (SIGIO) received
+2024/03/18 19:53:04 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2024/03/18 19:53:04 [notice] 1#1: worker process 29 exited with code 0
+2024/03/18 19:53:04 [notice] 1#1: exit
+2024/03/18 20:09:10 [notice] 1#1: using the "epoll" event method
+2024/03/18 20:09:10 [notice] 1#1: nginx/1.25.4
+2024/03/18 20:09:10 [notice] 1#1: built by gcc 12.2.1 20220924 (Alpine 12.2.1_git20220924-r10) 
+2024/03/18 20:09:10 [notice] 1#1: OS: Linux 6.1.0-18-amd64
+2024/03/18 20:09:10 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2024/03/18 20:09:10 [notice] 1#1: start worker processes
+2024/03/18 20:09:10 [notice] 1#1: start worker process 30
+2024/03/18 20:09:10 [notice] 1#1: start worker process 31
+2024/03/18 20:09:47 [error] 31#31: *1 open() "/var/www/html/favicon.ico" failed (2: No such file or directory), client: 192.168.0.105, server: , request: "GET /favicon.ico HTTP/1.1", host: "192.168.0.177:8080", referrer: "http://192.168.0.177:8080/"
+2024/03/18 20:12:15 [error] 31#31: *12 open() "/var/www/html/adfasdasdf" failed (2: No such file or directory), client: 192.168.0.105, server: , request: "GET /adfasdasdf HTTP/1.1", host: "192.168.0.177:8080"
+2024/03/18 20:15:00 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2024/03/18 20:15:00 [notice] 31#31: gracefully shutting down
+2024/03/18 20:15:00 [notice] 30#30: gracefully shutting down
+2024/03/18 20:15:00 [notice] 31#31: exiting
+2024/03/18 20:15:00 [notice] 30#30: exiting
+2024/03/18 20:15:00 [notice] 31#31: exit
+2024/03/18 20:15:00 [notice] 30#30: exit
+2024/03/18 20:15:00 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2024/03/18 20:15:00 [notice] 1#1: worker process 30 exited with code 0
+2024/03/18 20:15:00 [notice] 1#1: worker process 31 exited with code 0
+2024/03/18 20:15:00 [notice] 1#1: exit
+2024/03/18 20:15:01 [notice] 1#1: using the "epoll" event method
+2024/03/18 20:15:01 [notice] 1#1: nginx/1.25.4
+2024/03/18 20:15:01 [notice] 1#1: built by gcc 12.2.1 20220924 (Alpine 12.2.1_git20220924-r10) 
+2024/03/18 20:15:01 [notice] 1#1: OS: Linux 6.1.0-18-amd64
+2024/03/18 20:15:01 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2024/03/18 20:15:01 [notice] 1#1: start worker processes
+2024/03/18 20:15:01 [notice] 1#1: start worker process 29
+2024/03/18 20:15:01 [notice] 1#1: start worker process 30
+2024/03/18 20:15:09 [error] 29#29: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 192.168.0.105, server: , request: "GET /adfasdasdf.php HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "192.168.0.177:8080"
+2024/03/18 20:15:12 [error] 29#29: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 192.168.0.105, server: , request: "GET /index.php HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "192.168.0.177:8080"
+2024/03/18 20:17:59 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2024/03/18 20:17:59 [notice] 30#30: gracefully shutting down
+2024/03/18 20:17:59 [notice] 30#30: exiting
+2024/03/18 20:17:59 [notice] 29#29: gracefully shutting down
+2024/03/18 20:17:59 [notice] 29#29: exiting
+2024/03/18 20:17:59 [notice] 30#30: exit
+2024/03/18 20:17:59 [notice] 29#29: exit
+2024/03/18 20:17:59 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2024/03/18 20:17:59 [notice] 1#1: worker process 30 exited with code 0
+2024/03/18 20:17:59 [notice] 1#1: signal 29 (SIGIO) received
+2024/03/18 20:17:59 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2024/03/18 20:17:59 [notice] 1#1: worker process 29 exited with code 0
+2024/03/18 20:17:59 [notice] 1#1: exit
+2024/03/18 20:19:31 [notice] 1#1: using the "epoll" event method
+2024/03/18 20:19:31 [notice] 1#1: nginx/1.25.4
+2024/03/18 20:19:31 [notice] 1#1: built by gcc 12.2.1 20220924 (Alpine 12.2.1_git20220924-r10) 
+2024/03/18 20:19:31 [notice] 1#1: OS: Linux 6.1.0-18-amd64
+2024/03/18 20:19:31 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2024/03/18 20:19:31 [notice] 1#1: start worker processes
+2024/03/18 20:19:31 [notice] 1#1: start worker process 28
+2024/03/18 20:19:31 [notice] 1#1: start worker process 29
+2024/03/18 20:20:36 [error] 28#28: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 192.168.0.105, server: , request: "GET /index.php HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "192.168.0.177:8080"
+2024/03/18 20:20:37 [error] 28#28: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 192.168.0.105, server: , request: "GET /index.php HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "192.168.0.177:8080"
+2024/03/18 20:20:38 [error] 28#28: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 192.168.0.105, server: , request: "GET /index.php HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "192.168.0.177:8080"
+2024/03/18 20:20:38 [error] 28#28: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 192.168.0.105, server: , request: "GET /index.php HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "192.168.0.177:8080"
+2024/03/18 20:20:38 [error] 28#28: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 192.168.0.105, server: , request: "GET /index.php HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "192.168.0.177:8080"
+2024/03/18 20:20:39 [error] 28#28: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 192.168.0.105, server: , request: "GET /index.php HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "192.168.0.177:8080"
+2024/03/18 20:20:39 [error] 28#28: *1 open() "/var/www/html/favicon.ico" failed (2: No such file or directory), client: 192.168.0.105, server: , request: "GET /favicon.ico HTTP/1.1", host: "192.168.0.177:8080", referrer: "http://192.168.0.177:8080/index.php"
+2024/03/18 20:21:53 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2024/03/18 20:21:53 [notice] 28#28: gracefully shutting down
+2024/03/18 20:21:53 [notice] 29#29: gracefully shutting down
+2024/03/18 20:21:53 [notice] 28#28: exiting
+2024/03/18 20:21:53 [notice] 29#29: exiting
+2024/03/18 20:21:53 [notice] 28#28: exit
+2024/03/18 20:21:53 [notice] 29#29: exit
+2024/03/18 20:21:53 [notice] 1#1: signal 17 (SIGCHLD) received from 28
+2024/03/18 20:21:53 [notice] 1#1: worker process 28 exited with code 0
+2024/03/18 20:21:53 [notice] 1#1: worker process 29 exited with code 0
+2024/03/18 20:21:53 [notice] 1#1: exit
+2024/03/18 20:21:53 [notice] 1#1: using the "epoll" event method
+2024/03/18 20:21:53 [notice] 1#1: nginx/1.25.4
+2024/03/18 20:21:53 [notice] 1#1: built by gcc 12.2.1 20220924 (Alpine 12.2.1_git20220924-r10) 
+2024/03/18 20:21:53 [notice] 1#1: OS: Linux 6.1.0-18-amd64
+2024/03/18 20:21:53 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2024/03/18 20:21:53 [notice] 1#1: start worker processes
+2024/03/18 20:21:53 [notice] 1#1: start worker process 30
+2024/03/18 20:21:53 [notice] 1#1: start worker process 31
+2024/03/18 20:24:51 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2024/03/18 20:24:51 [notice] 31#31: gracefully shutting down
+2024/03/18 20:24:51 [notice] 31#31: exiting
+2024/03/18 20:24:51 [notice] 30#30: gracefully shutting down
+2024/03/18 20:24:51 [notice] 30#30: exiting
+2024/03/18 20:24:51 [notice] 31#31: exit
+2024/03/18 20:24:51 [notice] 30#30: exit
+2024/03/18 20:24:51 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2024/03/18 20:24:51 [notice] 1#1: worker process 30 exited with code 0
+2024/03/18 20:24:51 [notice] 1#1: worker process 31 exited with code 0
+2024/03/18 20:24:51 [notice] 1#1: exit
+2024/03/18 20:24:52 [notice] 1#1: using the "epoll" event method
+2024/03/18 20:24:52 [notice] 1#1: nginx/1.25.4
+2024/03/18 20:24:52 [notice] 1#1: built by gcc 12.2.1 20220924 (Alpine 12.2.1_git20220924-r10) 
+2024/03/18 20:24:52 [notice] 1#1: OS: Linux 6.1.0-18-amd64
+2024/03/18 20:24:52 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2024/03/18 20:24:52 [notice] 1#1: start worker processes
+2024/03/18 20:24:52 [notice] 1#1: start worker process 29
+2024/03/18 20:24:52 [notice] 1#1: start worker process 30
+2024/03/18 20:26:21 [error] 30#30: *15 directory index of "/var/www/html/" is forbidden, client: 192.168.0.105, server: , request: "GET / HTTP/1.1", host: "192.168.0.177:8080"
