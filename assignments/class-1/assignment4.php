@@ -22,6 +22,14 @@ for ($i = 0; $i < count($words); $i++) {
 		$words[$i] = str_replace($special_chars, "", $words[$i]);
 	}
 }
+$association_array = [];
+foreach($words as $key => $value) {
+	if($key % 2 == 0 && $key != count($words) - 1) {
+		$association_array[$value] = $words[$key + 1];
+	}
+}
 
-echo implode(" ", $words);
+foreach($association_array as $key => $value) {
+	echo $key . " => " . $value . "<br>";
+}
 ?>
