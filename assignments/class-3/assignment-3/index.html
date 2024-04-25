@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form action="dir.php" method="get">
+    <label for="path">Path:</label>
+    <input type="text" name="path" id="path" required />
+    <br />
+    <label for="dir">Directory:</label>
+    <input type="text" name="dir" id="dir" required />
+    <br />
+    <label for="operation">Operation:</label>
+    <select name="operation" id="operation">
+        <option value="read">Read</option>
+        <option value="delete">Delete</option>
+        <option value="create">Create</option>
+    </select>
+    <br />
+    <input type="submit" value="Submit" />
+</body>
+</html>
