@@ -1,0 +1,2 @@
+https://google.com;Wyszukiwarka
+https://youtube.com;Odtwarzacz treści video
