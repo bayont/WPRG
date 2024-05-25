@@ -9,7 +9,8 @@ services:
     networks:
       - internal
     volumes:
-      - ../:/var/www/html/
+      - ../assignments:/var/www/html/assignments
+      - ../project:/var/www/html/project
       - ./logs/nginx:/var/log/nginx/
   php:
     image: php:fpm-alpine
