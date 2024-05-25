@@ -18,6 +18,19 @@ services:
     volumes:
       - ../:/var/www/html/
       - ./logs/php.log:/var/log/fpm-php.www.log
+  mysql:
+    image: mysql
+    networks:
+      - internal
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: app
+      MYSQL_USER: app
+      MYSQL_PASSWORD: app
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql:/var/lib/mysql
 networks:
   internal:
     driver: bridge
