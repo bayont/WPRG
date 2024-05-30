@@ -1,28 +1,34 @@
 version: "3"
 services:
   nginx:
+    container_name: nginx
     build:
       context: .
       dockerfile: nginx/Dockerfile
     ports:
-      - "8080:80"
+      - "8080:8080"
     networks:
-      - internal
+      - app_network
     volumes:
       - ../assignments:/var/www/html/assignments
       - ../project:/var/www/html/project
       - ./logs/nginx:/var/log/nginx/
   php:
-    image: php:fpm-alpine
+    container_name: php
+    build:
+      context: .
+      dockerfile: php/Dockerfile
     networks:
-      - internal
+      - app_network
+      - db_network
     volumes:
       - ../:/var/www/html/
       - ./logs/php.log:/var/log/fpm-php.www.log
   mysql:
+    container_name: mysql
     image: mysql
     networks:
-      - internal
+      - db_network
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: app
@@ -33,6 +39,5 @@ services:
     volumes:
       - ./mysql:/var/lib/mysql
 networks:
-  internal:
-    driver: bridge
-
+  app_network:
+  db_network:
