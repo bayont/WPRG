@@ -8,6 +8,31 @@ Quizconst is a simple quiz app that allows users to create and take quizzes. Use
 
 This project was created as part of the university course.
 
+### ToDos left
+
+User stories:
+
+- [] user profile
+- [] new attempt mode - test
+- [] admin panel
+- [] main page with quizzes from all users
+- [] filter quizzes by category
+- [] quiz search
+- [] add email property + verification
+
+Technical:
+
+- [] add logs to database
+- [] check for vulnerabilities
+- [] add new database schema to project README
+- [] add some starting data to database
+- [] input validations and error handling:
+  - [x] user registration
+  - [] user login
+  - [] quiz creation
+  - [] flashcard attempt
+- [] deploy to docker container with Microsoft Azure
+
 ### Acceptance Criteria
 
 - users
@@ -35,7 +60,7 @@ This project was created as part of the university course.
   - quizzes
   - logs
 
-### Database schema - draft
+### Database schema - draft - outdated
 
 ![schema img](dbschema.png)
 
