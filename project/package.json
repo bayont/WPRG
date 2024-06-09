@@ -1,0 +1,17 @@
+{
+  "name": "quizconst",
+  "version": "1.0.0",
+  "description": "Quizconst app.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tailwind": "npx tailwindcss -m -w -i ./css/input.css -o ./css/tailwind.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "caniuse-lite": "^1.0.30001624",
+    "daisyui": "^4.11.1",
+    "tailwindcss": "^3.4.3"
+  }
+}

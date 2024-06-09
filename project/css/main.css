@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Hedvig+Letters+Sans&display=swap');
+
+html {
+    font-size: 16px;
+}
+
+.font-specific {
+    font-family: "Hedvig Letters Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.card-caption {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+}
+
+
+.reversible-card {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.reversible-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+
+.reversible-card.reversed .reversible-card-inner {
+    transform: rotateY(180deg);
+}
+
+.reversible-card-inner .reverse {
+    transform: rotateY(180deg);
+}
+
+.reversible-card-inner .front,
+.reversible-card-inner .reverse {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
