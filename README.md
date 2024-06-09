@@ -6,4 +6,4 @@ This repository contains the assignments for the course WPRG (Web Programming) w
 
 ## Project
 
-See [Quziconst](./project/README.md) for more information about the project.
+See [Quizconst](./project/README.md) for more information about the project.
