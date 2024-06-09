@@ -1,5 +1,5 @@
 <?php
-$hostname = "172.18.0.2";
+$hostname = "mysql";
 $port = 3306;
 $database = "mojaBaza";
 $username = "root";

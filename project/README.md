@@ -28,7 +28,7 @@ Technical:
 - [] add some starting data to database
 - [] input validations and error handling:
   - [x] user registration
-  - [] user login
+- [] user login
   - [] quiz creation
   - [] flashcard attempt
 - [] deploy to docker container with Microsoft Azure
