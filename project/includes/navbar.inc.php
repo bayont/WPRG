@@ -27,7 +27,7 @@
                     </summary>
                     <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-200 rounded-box w-52 mt-3">
                         <li><a>My quizes</a></li>
-                        <li><a>Profile</a></li>
+                        <li><a href="/profile.php">Profile</a></li>
                         <li><a href="/logout.php">Logout</a></li>
                     </ul>
         </details>
