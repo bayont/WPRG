@@ -8,7 +8,13 @@ Quizconst is a simple quiz app that allows users to create and take quizzes. Use
 
 User stories:
 
-- [ ] user profile
+- [x] user profile
+  - [x] user info
+  - [x] avatar
+  - [x] stats
+  - [ ] export score to file (my profile)
+  - [ ] edit user info (my profile)
+- [ ] user can add own avatar
 - [ ] new attempt mode - test
 - [ ] admin panel
 - [ ] main page with quizzes from all users
