@@ -1,6 +1,6 @@
 <div class="navbar bg-base-200">
     <div class="flex-1">
-        <a class="btn btn-ghost text-xl font-specific" href="/">Quizconst</a>
+        <a class="btn btn-ghost text-xl font-specific" href="./">Quizconst</a>
     </div>
     <div class="flex-none flex gap-4">
         <?php
@@ -27,13 +27,13 @@
                     </summary>
                     <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-200 rounded-box w-52 mt-3">
                         <li><a>My quizes</a></li>
-                        <li><a href="/profile.php">Profile</a></li>
-                        <li><a href="/logout.php">Logout</a></li>
+                        <li><a href="./profile.php">Profile</a></li>
+                        <li><a href="./logout.php">Logout</a></li>
                     </ul>
         </details>
         ';
         } else {
-            echo '<a role="button" class="btn btn-ghost" href="/login.php">Login</a>';
+            echo '<a role="button" class="btn btn-ghost" href="./login.php">Login</a>';
         }
         ?>
 

@@ -46,7 +46,7 @@ if ($logged_in) {
             <div class="w-full md:w-4/5 p-2">
                 <h1 class="text-5xl font-bold font-specific my-8">Welcome <span class="text-primary"><?php echo $logged_in ? $username : "Guest"  ?>!</span></h1>
                 <?php if (!$logged_in)
-                    echo '<p class="text-lg">Please <a href="/login.php" class="after:content-[\'_↗\'] link link-primary">login</a> or <a href="/signup.php" class="after:content-[\'_↗\'] link link-primary">sign up</a> to access your quizzes.</p>';
+                    echo '<p class="text-lg">Please <a href="./login.php" class="after:content-[\'_↗\'] link link-primary">login</a> or <a href="./signup.php" class="after:content-[\'_↗\'] link link-primary">sign up</a> to access your quizzes.</p>';
                 else {
                 ?>
                     <div class="flex my-3 items-center gap-2">
