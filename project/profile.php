@@ -15,8 +15,11 @@ $profileView = new ProfileView();
 
 if (isset($_GET['id'])) {
     $uid = $_GET['id'];
-} else {
+} elseif ($logged_in) {
     $uid = $_SESSION['user_id'];
+} else {
+    header('Location: index.php');
+    die;
 }
 
 $user_exist = $profileView->isUserExists($uid);
@@ -24,7 +27,6 @@ if (!$user_exist) {
     header('Location: index.php');
     die;
 }
-
 
 $userDetails = $profileView->getPublicProfileDetails($uid);
 
@@ -78,6 +80,14 @@ $userDetails = $profileView->getPublicProfileDetails($uid);
                             </div>
 
                         </div>
+
+                        <?php
+                        if ($logged_in && $uid == $_SESSION['user_id']) {
+                        ?>
+                            <a href="edit-profile.php" class="btn w-full bg-base-100">Edit profile</a>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
