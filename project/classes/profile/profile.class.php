@@ -4,7 +4,7 @@ class Profile extends Dbh
 {
     protected function getUserDetails($userId)
     {
-        $sql = "SELECT user_name, email, created_at FROM user WHERE id = ?";
+        $sql = "SELECT user_name, email, avatar_url, created_at FROM user WHERE id = ?";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$userId]);
 
@@ -51,5 +51,26 @@ class Profile extends Dbh
 
         $results = $stmt->fetch(PDO::FETCH_ASSOC);
         return $results;
+    }
+
+    protected function updateAvatar($userId, $avatarUrl)
+    {
+        $sql = "UPDATE user SET avatar_url = ? WHERE id = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$avatarUrl, $userId]);
+    }
+
+    protected function updatePassword($userId, $newPasswordHash)
+    {
+        $sql = "UPDATE user SET password_hash = ? WHERE id = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$newPasswordHash, $userId]);
+    }
+
+    protected function updateUsername($userId, $newUsername)
+    {
+        $sql = "UPDATE user SET user_name = ? WHERE id = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$newUsername, $userId]);
     }
 }

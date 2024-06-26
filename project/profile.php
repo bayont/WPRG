@@ -51,11 +51,19 @@ $userDetails = $profileView->getPublicProfileDetails($uid);
         <div class="flex-1 flex justify-center">
             <div class="w-full md:w-4/5 p-2 my-5 flex flex-col gap-4">
                 <div class="card relative bg-base-200 shadow-xl pt-5 mt-9">
-                    <div class="avatar placeholder mx-auto absolute -top-14 left-1/2 -translate-x-1/2">
+                    <?php
+                    echo isset($userDetails['avatar_url']) ? '<div class="avatar mx-auto absolute -top-14 left-1/2 -translate-x-1/2">
+                            <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                                <img src="' . $userDetails['avatar_url'] . '" />
+                            </div>
+                        </div>' : '<div class="avatar placeholder mx-auto absolute -top-14 left-1/2 -translate-x-1/2">
                         <div class="bg-primary text-primary-content rounded-full w-24 ring ring-primary ring-offset-base-100 ring-offset-2">
-                            <span class="text-3xl"><?php echo strtoupper(substr($userDetails['user_name'], 0, 1)) ?></span>
+                            <span class="text-3xl">' . strtoupper(substr($userDetails['user_name'], 0, 1)) . '</span>
                         </div>
-                    </div>
+                    </div>';
+
+                    ?>
+
                     <div class="card-body flex flex-col items-center">
                         <h1 class="card-title w-full text-2xl text-center font-bold font-specific "> <span class="w-full text-primary"><?php echo $userDetails['user_name'] ?></span></h1>
 

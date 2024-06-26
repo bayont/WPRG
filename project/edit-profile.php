@@ -15,6 +15,7 @@ require 'classes/profile/profile-view.class.php';
 $profileView = new ProfileView();
 
 $userDetails = $profileView->getPublicProfileDetails($_SESSION['user_id']);
+$avatarUrl = ''; //$userDetails['avatar_url'];
 
 ?>
 <!DOCTYPE html>
@@ -52,8 +53,10 @@ $userDetails = $profileView->getPublicProfileDetails($_SESSION['user_id']);
             const input = document.getElementById(inputId);
             const button = document.getElementById(buttonId);
             const retypePasswordControl = document.getElementById('retype-password-control');
+            const retypePasswordInput = document.getElementById('retype-password');
             input.removeAttribute('disabled');
             input.focus();
+            retypePasswordInput.removeAttribute('disabled');
             button.querySelector('.edit-icon').classList.add('hidden');
             button.querySelector('.undo-icon').classList.remove('hidden');
             button.setAttribute('onclick', `revertPassword('${buttonId}', '${inputId}', '${input.value}')`);
@@ -64,12 +67,31 @@ $userDetails = $profileView->getPublicProfileDetails($_SESSION['user_id']);
             const input = document.getElementById(inputId);
             const button = document.getElementById(buttonId);
             const retypePasswordControl = document.getElementById('retype-password-control');
+            const retypePasswordInput = document.getElementById('retype-password');
             input.value = originalValue;
             input.setAttribute('disabled', 'disabled');
+            retypePasswordInput.setAttribute('disabled', 'disabled');
             button.querySelector('.edit-icon').classList.remove('hidden');
             button.querySelector('.undo-icon').classList.add('hidden');
             button.setAttribute('onclick', `editPassword('${buttonId}', '${inputId}')`);
             retypePasswordControl.classList.add('hidden');
+        }
+
+        function handleFile(event) {
+            const file = event.target.files[0];
+            if (!file) {
+                return;
+            }
+            const preview = document.querySelector("#avatar-preview");
+            preview.classList.add("obj");
+            preview.file = file;
+
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                preview.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+            showAvatar();
         }
     </script>
 </head>
@@ -85,7 +107,28 @@ $userDetails = $profileView->getPublicProfileDetails($_SESSION['user_id']);
                 <div class="card relative bg-base-200 shadow-xl pt-5 mt-9">
                     <div class="card-body flex flex-col">
                         <h1 class="card-title">Edit profile</h1>
-                        <form action="includes/edit-profile.php" method="post">
+                        <div id="placeholder" class="block avatar placeholder absolute right-2 top-2">
+                            <div class="bg-primary text-primary-content w-20 rounded-full">
+                                <span class="text-3xl"><?php echo strtoupper(substr($userDetails['user_name'], 0, 1)) ?></span>
+                            </div>
+                        </div>
+
+                        <div id="avatar" class="hidden avatar absolute right-2 top-2">
+                            <div class="w-20 rounded-full">
+                                <img id="avatar-preview" />
+                            </div>
+                        </div>
+                        <form action="includes/edit-profile.inc.php" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="MAX_FILE_SIZE" value="2097152" />
+
+                            <label class="form-control w-full md:w-72">
+                                <div class="label">
+                                    <span class="label-text">Avatar</span>
+                                </div>
+                                <div>
+                                    <input name="avatar" onchange="handleFile(event)" accept="image/*" type="file" class="file-input file-input-bordered w-full" />
+                                </div>
+                            </label>
                             <label class="form-control w-full md:w-72">
                                 <div class="label">
                                     <span class="label-text">Username</span>
@@ -123,7 +166,7 @@ $userDetails = $profileView->getPublicProfileDetails($_SESSION['user_id']);
                                     <span class="label-text">Retype password</span>
                                 </div>
                                 <div class="flex gap-3">
-                                    <input type="password" placeholder="********" id="retype-password" name="retype-password" class="input input-bordered w-full " />
+                                    <input type="password" placeholder="********" id="retype-password" name="retype_password" class="input input-bordered w-full " disabled />
                                     <div class="w-14"></div>
                                 </div>
                             </label>
@@ -136,6 +179,40 @@ $userDetails = $profileView->getPublicProfileDetails($_SESSION['user_id']);
             </div>
         </div>
     </div>
+
+    <script>
+        const profileUrl = '<?php echo $userDetails['avatar_url'] ?>';
+
+        function showPlaceholder() {
+            const avatar = document.querySelector('#avatar');
+            avatar.classList.remove('block');
+            avatar.classList.add('hidden');
+
+            const placeholder = document.querySelector('#placeholder');
+            placeholder.classList.remove('hidden');
+            placeholder.classList.add('block');
+        }
+
+        function showAvatar(src) {
+            const avatar = document.querySelector('#avatar');
+            avatar.classList.remove('hidden');
+            avatar.classList.add('block');
+
+            const placeholder = document.querySelector('#placeholder');
+            placeholder.classList.remove('block');
+            placeholder.classList.add('hidden');
+            if (src) {
+                console.log(src)
+                const preview = document.querySelector("#avatar-preview");
+                preview.src = src;
+            }
+        }
+        if (!!profileUrl) {
+            showAvatar(profileUrl);
+        } else {
+            showPlaceholder();
+        }
+    </script>
 
 </body>
 
