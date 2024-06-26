@@ -14,7 +14,7 @@ User stories:
   - [x] stats
   - [ ] export score to file (my profile)
   - [x] edit user info (my profile)
-- [ ] user can add own avatar
+- [x] user can add own avatar
 - [ ] new attempt mode - test
 - [ ] admin panel
 - [ ] main page with quizzes from all users
