@@ -13,7 +13,7 @@ User stories:
   - [x] avatar
   - [x] stats
   - [ ] export score to file (my profile)
-  - [ ] edit user info (my profile)
+  - [x] edit user info (my profile)
 - [ ] user can add own avatar
 - [ ] new attempt mode - test
 - [ ] admin panel
@@ -30,6 +30,7 @@ Technical:
 - [ ] add some starting data to database
 - [ ] input validations and error handling:
   - [x] user registration
+  - [ ] profile edit
 - [ ] user login
   - [ ] quiz creation
   - [ ] flashcard attempt

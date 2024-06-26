@@ -7,6 +7,10 @@ class ProfileView extends Profile
     public function getPublicProfileDetails(string $user_id)
     {
         $user = $this->getUserDetails($user_id);
+        $avatarUrl = $user['avatar_url'];
+        if ($avatarUrl !== null) {
+            $user['avatar_url'] = "/uploads/" . $avatarUrl;
+        }
 
         //filter out sensitive information
         unset($user['email']);
