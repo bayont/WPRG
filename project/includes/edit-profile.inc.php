@@ -1,8 +1,23 @@
 <?php
+require_once './config_session.inc.php';
 
+require_once '../classes/dbh.class.php';
+require_once '../classes/permission/permission.class.php';
+require_once '../classes/permission/permission-contr.class.php';
 
-//check if there is only one file
+$permissionContr = new PermissionController();
 
+if ($_POST['uid'] == $_SESSION['user_id']) {
+    if (!$permissionContr->userHasPermission($_SESSION['user_id'], 'edit_own_profile')) {
+        header('Location: ../insufficient-permissions.php');
+        die();
+    }
+} else {
+    if (!$permissionContr->userHasPermission($_SESSION['user_id'], 'edit_profile')) {
+        header('Location: ../insufficient-permissions.php');
+        die();
+    }
+}
 
 if (isset($_FILES['avatar'])) {
     $file = $_FILES['avatar'];
@@ -25,10 +40,6 @@ if (isset($_FILES['avatar'])) {
     }
 }
 
-require_once './config_session.inc.php';
-
-
-require_once '../classes/dbh.class.php';
 require_once '../classes/signup/signup.class.php';
 require_once '../classes/signup/signup-contr.class.php';
 require_once '../classes/profile/profile.class.php';

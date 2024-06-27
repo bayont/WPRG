@@ -2,9 +2,22 @@
 
 class Profile extends Dbh
 {
+
+    protected function getAllUsers()
+    {
+        $sql = "SELECT id FROM user ORDER BY id ASC";
+        $stmt = $this->connect()->query($sql);
+
+        $results = $stmt->fetchAll();
+        return $results;
+    }
+
     protected function getUserDetails($userId)
     {
-        $sql = "SELECT user_name, email, avatar_url, created_at FROM user WHERE id = ?";
+        $sql = "SELECT user.id, user.user_name, user.avatar_url, user.created_at, role.name AS role
+        FROM user
+            INNER JOIN role ON role.id = user.role_id
+        WHERE user.id = ?";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$userId]);
 
@@ -72,5 +85,12 @@ class Profile extends Dbh
         $sql = "UPDATE user SET user_name = ? WHERE id = ?";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$newUsername, $userId]);
+    }
+
+    protected function deleteUser($userId)
+    {
+        $sql = "DELETE FROM user WHERE id = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$userId]);
     }
 }

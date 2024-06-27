@@ -10,8 +10,11 @@ if (isset($_SESSION['user_id'])) {
 require 'classes/dbh.class.php';
 require 'classes/profile/profile.class.php';
 require 'classes/profile/profile-view.class.php';
+require 'classes/permission/permission.class.php';
+require 'classes/permission/permission-view.class.php';
 
 $profileView = new ProfileView();
+$permissionView = new PermissionView();
 
 if (isset($_GET['id'])) {
     $uid = $_GET['id'];
@@ -29,6 +32,8 @@ if (!$user_exist) {
 }
 
 $userDetails = $profileView->getPublicProfileDetails($uid);
+
+$canEdit = $logged_in && (($uid == $_SESSION['user_id'] && $permissionView->userHasPermission($_SESSION['user_id'], 'edit_own_profile')) || $permissionView->userHasPermission($_SESSION['user_id'], 'edit_profile'));
 
 ?>
 <!DOCTYPE html>
@@ -90,9 +95,9 @@ $userDetails = $profileView->getPublicProfileDetails($uid);
                         </div>
 
                         <?php
-                        if ($logged_in && $uid == $_SESSION['user_id']) {
+                        if ($canEdit) {
                         ?>
-                            <a href="edit-profile.php" class="btn w-full bg-base-100">Edit profile</a>
+                            <a href="edit-profile.php?id=<?php echo $uid ?>" class="btn w-full bg-base-100">Edit profile</a>
                         <?php
                         }
                         ?>
