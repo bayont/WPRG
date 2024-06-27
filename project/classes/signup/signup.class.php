@@ -6,7 +6,7 @@ abstract class Signup extends Dbh
 {
     protected function setUser(string $username, string $hashed_password)
     {
-        $sql = "INSERT INTO user (user_name, password_hash) VALUES (:username, :hashed_password)";
+        $sql = "INSERT INTO user (user_name, password_hash, role_id) VALUES (:username, :hashed_password, 1)";
         $dbh = $this->connect();
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':username', $username);

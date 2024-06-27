@@ -16,7 +16,7 @@ User stories:
   - [x] edit user info (my profile)
 - [x] user can add own avatar
 - [ ] new attempt mode - test
-- [ ] admin panel
+- [x] admin panel
 - [ ] main page with quizzes from all users
 - [ ] filter quizzes by category
 - [ ] quiz search
@@ -31,9 +31,6 @@ Technical:
 - [ ] input validations and error handling:
   - [x] user registration
   - [ ] profile edit
-- [ ] user login
-  - [ ] quiz creation
-  - [ ] flashcard attempt
 - [ ] deploy docker containers to Microsoft Azure
 
 ## University project

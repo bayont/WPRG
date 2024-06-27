@@ -11,10 +11,25 @@ if (isset($_SESSION['user_id'])) {
 require 'classes/dbh.class.php';
 require 'classes/profile/profile.class.php';
 require 'classes/profile/profile-view.class.php';
+require 'classes/permission/permission.class.php';
+require 'classes/permission/permission-view.class.php';
+
+$permissionView = new PermissionView();
+
+$user_id = $_SESSION['user_id'];
+
+if (isset($_GET['id']) && $_GET['id'] != $user_id) {
+    if ($permissionView->userHasPermission($user_id, 'edit_profile')) {
+        $user_id = $_GET['id'];
+    } else {
+        header('Location: insufficient-permissions.php');
+        die();
+    }
+}
 
 $profileView = new ProfileView();
 
-$userDetails = $profileView->getPublicProfileDetails($_SESSION['user_id']);
+$userDetails = $profileView->getPublicProfileDetails($user_id);
 $avatarUrl = ''; //$userDetails['avatar_url'];
 
 ?>
@@ -120,6 +135,7 @@ $avatarUrl = ''; //$userDetails['avatar_url'];
                         </div>
                         <form action="includes/edit-profile.inc.php" method="post" enctype="multipart/form-data">
                             <input type="hidden" name="MAX_FILE_SIZE" value="2097152" />
+                            <input type="hidden" name="uid" value="<?php echo $user_id ?>" />
 
                             <label class="form-control w-full md:w-72">
                                 <div class="label">

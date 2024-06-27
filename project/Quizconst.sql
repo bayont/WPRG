@@ -62,11 +62,7 @@ CREATE TABLE `attempt_test_option` (
     `is_selected` boolean
 );
 
-CREATE TABLE `permission` (
-    `id` integer PRIMARY KEY AUTO_INCREMENT,
-    `permission` varchar(255),
-    `role_id` integer
-);
+CREATE TABLE `permission` ( `name` varchar(255) PRIMARY KEY );
 
 CREATE TABLE `role` (
     `id` integer PRIMARY KEY AUTO_INCREMENT,
@@ -77,6 +73,7 @@ CREATE TABLE `user` (
     `id` integer PRIMARY KEY AUTO_INCREMENT,
     `user_name` varchar(255),
     `email` varchar(255),
+    `role_id` integer,
     `avatar_url` varchar(255),
     `password_hash` varchar(255),
     `created_at` TIMESTAMP NOT NULL DEFAULT NOW(),
@@ -126,20 +123,20 @@ ADD FOREIGN KEY (`front_id`) REFERENCES `side` (`id`);
 ALTER TABLE `flashcard`
 ADD FOREIGN KEY (`reverse_id`) REFERENCES `side` (`id`);
 
-ALTER TABLE `permission`
+ALTER TABLE `user`
 ADD FOREIGN KEY (`role_id`) REFERENCES `role` (`id`);
 
-CREATE TABLE `user_role` (
-    `user_id` integer,
+CREATE TABLE `role_permission` (
     `role_id` integer,
-    PRIMARY KEY (`user_id`, `role_id`)
+    `permission_name` varchar(255),
+    PRIMARY KEY (`role_id`, `permission_name`)
 );
 
-ALTER TABLE `user_role`
-ADD FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
-
-ALTER TABLE `user_role`
+ALTER TABLE `role_permission`
 ADD FOREIGN KEY (`role_id`) REFERENCES `role` (`id`);
+
+ALTER TABLE `role_permission`
+ADD FOREIGN KEY (`permission_name`) REFERENCES `permission` (`name`);
 
 ALTER TABLE `log`
 ADD FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
@@ -162,10 +159,35 @@ VALUES ('Mathematics'),
 INSERT INTO `role` (`name`) VALUES ('user'), ('admin');
 
 INSERT INTO
-    `permission` (`permission`, `role_id`)
-VALUES ('create_quiz', 1),
-    ('edit_own_quiz', 1),
-    ('delete_own_quiz', 1),
+    `permission` (`name`)
+VALUES ('create_quiz'),
+    ('edit_own_quiz'),
+    ('delete_own_quiz'),
+    ('edit_quiz'),
+    ('delete_quiz'),
+    ('create_user'),
+    ('edit_user'),
+    ('delete_user'),
+    ('create_category'),
+    ('edit_category'),
+    ('delete_category'),
+    ('create_type'),
+    ('edit_type'),
+    ('delete_type'),
+    ('create_role'),
+    ('edit_role'),
+    ('delete_role'),
+    ('edit_profile'),
+    ('edit_own_profile'),
+    ('is_admin'),
+    ('export_score'),
+    ('view_logs');
+
+INSERT INTO
+    `role_permission` (`permission_name`, `role_id`)
+VALUES ('create_quiz', 2),
+    ('edit_own_quiz', 2),
+    ('delete_own_quiz', 2),
     ('edit_quiz', 2),
     ('delete_quiz', 2),
     ('create_user', 2),
@@ -180,6 +202,11 @@ VALUES ('create_quiz', 1),
     ('create_role', 2),
     ('edit_role', 2),
     ('delete_role', 2),
-    ('create_permission', 2),
-    ('edit_permission', 2),
-    ('delete_permission', 2);
+    ('edit_profile', 2),
+    ('is_admin', 2),
+    ('export_score', 2),
+    ('view_logs', 2),
+    ('edit_own_profile', 1),
+    ('create_quiz', 1),
+    ('edit_own_quiz', 1),
+    ('delete_own_quiz', 1);

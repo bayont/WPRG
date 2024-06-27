@@ -16,4 +16,9 @@ class ProfileController extends Profile
     {
         $this->updateUsername($userId, $newUsername);
     }
+
+    public function deleteUserById(string $userId)
+    {
+        $this->deleteUser($userId);
+    }
 }
