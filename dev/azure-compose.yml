@@ -1,0 +1,28 @@
+version: "3"
+services:
+  nginx:
+    container_name: quizconst
+    image: bayont/quizconst
+    ports:
+      - "80:80"
+    networks:
+      - app_network
+  php:
+    container_name: php
+    image: bayont/quizconst-php
+    networks:
+      - app_network
+      - db_network
+  mysql:
+    container_name: db
+    image: bayont/quizconst-db
+    networks:
+      - db_network
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: app
+      MYSQL_PASSWORD: app
+networks:
+  app_network:
+  db_network:
