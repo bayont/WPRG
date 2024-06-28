@@ -2,7 +2,7 @@
 
 class Dbh
 {
-    private $host = "mysql";
+    private $host = "db";
     private $port = 3306;
     private $user = "root";
     private $pwd = "password";

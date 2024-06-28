@@ -210,3 +210,15 @@ VALUES ('create_quiz', 2),
     ('create_quiz', 1),
     ('edit_own_quiz', 1),
     ('delete_own_quiz', 1);
+
+INSERT INTO
+    `user` (
+        `user_name`,
+        `password_hash`,
+        `role_id`
+    )
+VALUES (
+        'admin',
+        '$2y$10$JnAce229Im5vLyMkNcqgauu4BFmAZA2.aNBwt/r4SKdsfO678Lzta',
+        2
+    );
