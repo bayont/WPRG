@@ -2,11 +2,13 @@ version: "3"
 services:
   nginx:
     container_name: nginx
+    image: bayont/quizconst
+    platform: linux/amd64
     build:
-      context: .
-      dockerfile: nginx/Dockerfile
+      context: ../
+      dockerfile: ./dev/nginx/Dockerfile
     ports:
-      - "8080:8080"
+      - "8080:80"
     networks:
       - app_network
     volumes:
@@ -15,18 +17,24 @@ services:
       - ./logs/nginx:/var/log/nginx/
   php:
     container_name: php
+    image: bayont/quizconst-php
+    platform: linux/amd64
     build:
-      context: .
-      dockerfile: php/Dockerfile
+      context: ../
+      dockerfile: ./dev/php/Dockerfile
     networks:
       - app_network
       - db_network
     volumes:
       - ../:/var/www/html/
       - ./logs/php.log:/var/log/fpm-php.www.log
-  mysql:
-    container_name: mysql
-    image: mysql
+  db:
+    container_name: db
+    platform: linux/amd64
+    image: bayont/quizconst-db
+    build: 
+      context: ../
+      dockerfile: ./dev/db/Dockerfile
     networks:
       - db_network
     environment:
