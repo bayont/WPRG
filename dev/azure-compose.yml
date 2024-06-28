@@ -13,7 +13,7 @@ services:
     networks:
       - app_network
       - db_network
-  mysql:
+  db:
     container_name: db
     image: bayont/quizconst-db
     networks:
