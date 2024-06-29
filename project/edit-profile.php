@@ -1,5 +1,5 @@
 <?php
-require_once 'includes/config_session.inc.php';
+require_once './includes/config_session.inc.php';
 
 if (isset($_SESSION['user_id'])) {
     $logged_in = true;
@@ -114,7 +114,7 @@ $avatarUrl = ''; //$userDetails['avatar_url'];
 <body>
     <div class="flex flex-col gap-1 min-h-screen">
         <?php
-        include_once 'includes/navbar.inc.php';
+        include_once './includes/navbar.inc.php';
         ?>
 
         <div class="flex-1 flex justify-center">
@@ -133,7 +133,7 @@ $avatarUrl = ''; //$userDetails['avatar_url'];
                                 <img id="avatar-preview" />
                             </div>
                         </div>
-                        <form action="includes/edit-profile.inc.php" method="post" enctype="multipart/form-data">
+                        <form action="./includes/edit-profile.inc.php" method="post" enctype="multipart/form-data">
                             <input type="hidden" name="MAX_FILE_SIZE" value="2097152" />
                             <input type="hidden" name="uid" value="<?php echo $user_id ?>" />
 

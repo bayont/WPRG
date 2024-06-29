@@ -1,5 +1,5 @@
 <?php
-require_once 'includes/config_session.inc.php';
+require_once './includes/config_session.inc.php';
 
 if (isset($_SESSION['user_id'])) {
     $username = $_SESSION['username'];
@@ -30,7 +30,7 @@ if ($logged_in) {
 <body>
     <div class="flex flex-col gap-1 min-h-screen">
         <?php
-        include_once 'includes/navbar.inc.php';
+        include_once './includes/navbar.inc.php';
 
         if (isset($_GET['login'])) {
             $toastMessage = 'Login successful!';
@@ -39,7 +39,7 @@ if ($logged_in) {
         } elseif (isset($_GET['signup'])) {
             $toastMessage = 'Signup successful!';
         }
-        include "includes/toast.inc.php";
+        include "./includes/toast.inc.php";
         ?>
 
         <div class="flex-1 flex justify-center">

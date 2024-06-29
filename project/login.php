@@ -1,6 +1,5 @@
 <?php
-
-require_once 'includes/config_session.inc.php';
+require_once './includes/config_session.inc.php';
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +17,7 @@ require_once 'includes/config_session.inc.php';
     <div class="flex flex-col gap-1 min-h-screen">
 
         <?php
-        include_once 'includes/navbar.inc.php';
+        include_once './includes/navbar.inc.php';
         ?>
 
         <div class="hero flex-1 bg-base-200">
@@ -26,11 +25,11 @@ require_once 'includes/config_session.inc.php';
                 <div class="text-center lg:text-left">
                     <h1 class="text-5xl font-bold whitespace-nowrap">Login now!</h1>
                     <p class="py-6 whitespace-nowrap">
-                        You don't have an account? <a href="/signup.php" class="after:content-['_↗'] link link-primary">Sign up</a>
+                        You don't have an account? <a href="./signup.php" class="after:content-['_↗'] link link-primary">Sign up</a>
                     </p>
                 </div>
                 <div class="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                    <form action="includes/login.inc.php" method="post" class="card-body">
+                    <form action="./includes/login.inc.php" method="post" class="card-body">
                         <div class="form-control">
                             <label class="label">
                                 <span class="label-text">Username</span>

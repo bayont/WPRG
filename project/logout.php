@@ -1,2 +1,2 @@
 <?php
-require_once "includes/logout.inc.php";
+require_once "./includes/logout.inc.php";

@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dodaj samochód</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
+
 <body>
     <?php
-        include_once 'includes/navbar.inc.php';
+    include_once './includes/navbar.inc.php';
     ?>
     <main>
         <h1>Dodaj samochód</h1>
         <h2>Powiększ naszą flotę o swoją perełkę</h2>
-        <form action="includes/add-car.inc.php" method="post">
+        <form action="./includes/add-car.inc.php" method="post">
             <fieldset>
                 <legend>Podstawowe informacje</legend>
                 <label for="marka">Marka</label>
@@ -37,4 +39,5 @@
         </form>
     </main>
 </body>
+
 </html>

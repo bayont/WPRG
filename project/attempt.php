@@ -1,5 +1,5 @@
 <?php
-require_once 'includes/config_session.inc.php';
+require_once './includes/config_session.inc.php';
 
 require "classes/dbh.class.php";
 require "classes/quiz/quiz.class.php";
@@ -50,7 +50,7 @@ if (!$attempt_id) {
 <body>
     <div class="w-full h-svh flex flex-col overflow-hidden">
         <?php
-        include_once 'includes/navbar.inc.php';
+        include_once './includes/navbar.inc.php';
         ?>
         <div class="p-2 mx-auto w-full md:w-4/5 lg:w-3/4 max-w-[50rem] my-3 flex flex-col items-center gap-3 h-full">
             <div class="mt-4">
@@ -124,7 +124,7 @@ if (!$attempt_id) {
         const flashcardsCompleted = () => {
             const form = document.createElement('form');
             form.method = 'POST';
-            form.action = 'includes/attempt.inc.php';
+            form.action = './includes/attempt.inc.php';
 
             const knownFlashcardsInput = document.createElement('input');
             knownFlashcardsInput.type = 'hidden';

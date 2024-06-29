@@ -1,5 +1,5 @@
 <?php
-require_once 'includes/config_session.inc.php';
+require_once './includes/config_session.inc.php';
 
 if (isset($_SESSION['user_id'])) {
     $logged_in = true;
@@ -42,7 +42,7 @@ require_once 'classes/profile/profile-view.class.php';
 <body>
     <div class="flex flex-col gap-1 min-h-screen">
         <?php
-        include_once 'includes/navbar.inc.php';
+        include_once './includes/navbar.inc.php';
         ?>
 
         <div class="flex-1 flex justify-center">
