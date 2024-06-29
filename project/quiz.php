@@ -1,5 +1,5 @@
 <?php
-require_once 'includes/config_session.inc.php';
+require_once './includes/config_session.inc.php';
 
 require "classes/dbh.class.php";
 require "classes/quiz/quiz.class.php";
@@ -22,7 +22,7 @@ $quizDetails = $quizView->getQuizDetails($_GET['id']);
 
 <body>
     <?php
-    include_once 'includes/navbar.inc.php';
+    include_once './navbar.partial.php';
     ?>
     <div class="w-full p-1">
         <div class="mx-auto w-full md:w-4/5 lg:w-3/4 max-w-[50rem] my-3 flex flex-col items-center gap-3">

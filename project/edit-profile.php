@@ -1,5 +1,5 @@
 <?php
-require_once 'includes/config_session.inc.php';
+require_once './includes/config_session.inc.php';
 
 if (isset($_SESSION['user_id'])) {
     $logged_in = true;
@@ -30,7 +30,7 @@ if (isset($_GET['id']) && $_GET['id'] != $user_id) {
 $profileView = new ProfileView();
 
 $userDetails = $profileView->getPublicProfileDetails($user_id);
-$avatarUrl = ''; //$userDetails['avatar_url'];
+$avatarUrl = '';
 
 ?>
 <!DOCTYPE html>
@@ -114,7 +114,7 @@ $avatarUrl = ''; //$userDetails['avatar_url'];
 <body>
     <div class="flex flex-col gap-1 min-h-screen">
         <?php
-        include_once 'includes/navbar.inc.php';
+        include_once './navbar.partial.php';
         ?>
 
         <div class="flex-1 flex justify-center">
@@ -133,7 +133,7 @@ $avatarUrl = ''; //$userDetails['avatar_url'];
                                 <img id="avatar-preview" />
                             </div>
                         </div>
-                        <form action="includes/edit-profile.inc.php" method="post" enctype="multipart/form-data">
+                        <form action="./includes/edit-profile.inc.php" method="post" enctype="multipart/form-data">
                             <input type="hidden" name="MAX_FILE_SIZE" value="2097152" />
                             <input type="hidden" name="uid" value="<?php echo $user_id ?>" />
 
@@ -197,7 +197,7 @@ $avatarUrl = ''; //$userDetails['avatar_url'];
     </div>
 
     <script>
-        const profileUrl = '<?php echo $userDetails['avatar_url'] ?>';
+        const profileUrl = '<?php echo './uploads/' . $userDetails['avatar_url'] ?>';
 
         function showPlaceholder() {
             const avatar = document.querySelector('#avatar');

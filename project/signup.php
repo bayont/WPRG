@@ -1,6 +1,6 @@
 <?php
 
-require_once 'includes/config_session.inc.php';
+require_once './includes/config_session.inc.php';
 
 $grouped_errors = array(
     "username" => "",
@@ -46,7 +46,7 @@ if (isset($_SESSION['errors'])) {
     <div class="flex flex-col gap-1 min-h-screen">
 
         <?php
-        include_once 'includes/navbar.inc.php';
+        include_once './navbar.partial.php';
         $username = $_GET['username'] ?? '';
 
         ?>
@@ -56,11 +56,11 @@ if (isset($_SESSION['errors'])) {
                 <div class="text-center lg:text-left">
                     <h1 class="text-5xl font-bold whitespace-nowrap">Sign up now!</h1>
                     <p class="py-6 whitespace-nowrap">
-                        Already have an account? <a href="/login.php" class="after:content-['_↗'] link link-primary">Login</a>
+                        Already have an account? <a href="./login.php" class="after:content-['_↗'] link link-primary">Login</a>
                     </p>
                 </div>
                 <div class="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                    <form action="includes/signup.inc.php" method="post" class="card-body">
+                    <form action="./includes/signup.inc.php" method="post" class="card-body">
                         <div class="form-control">
                             <label class="label">
                                 <span class="label-text">Username</span>

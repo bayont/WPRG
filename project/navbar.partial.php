@@ -32,7 +32,7 @@
                         ' .
                 (isset($nav['userDetails']['avatar_url']) ? '<div class="avatar">
                             <div class="w-10 rounded-full">
-                                <img src="' . $nav['userDetails']['avatar_url'] . '" />
+                                <img src="./uploads/' . $nav['userDetails']['avatar_url'] . '" />
                             </div>
                         </div>' : '<div class="avatar placeholder">
                             <div class="bg-primary text-primary-content rounded-full w-10">

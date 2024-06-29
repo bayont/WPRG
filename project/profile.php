@@ -1,5 +1,5 @@
 <?php
-require_once 'includes/config_session.inc.php';
+require_once './includes/config_session.inc.php';
 
 if (isset($_SESSION['user_id'])) {
     $logged_in = true;
@@ -50,7 +50,7 @@ $canEdit = $logged_in && (($uid == $_SESSION['user_id'] && $permissionView->user
 <body>
     <div class="flex flex-col gap-1 min-h-screen">
         <?php
-        include_once 'includes/navbar.inc.php';
+        include_once './navbar.partial.php';
         ?>
 
         <div class="flex-1 flex justify-center">
@@ -59,7 +59,7 @@ $canEdit = $logged_in && (($uid == $_SESSION['user_id'] && $permissionView->user
                     <?php
                     echo isset($userDetails['avatar_url']) ? '<div class="avatar mx-auto absolute -top-14 left-1/2 -translate-x-1/2">
                             <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                                <img src="' . $userDetails['avatar_url'] . '" />
+                                <img src="./uploads/' . $userDetails['avatar_url'] . '" />
                             </div>
                         </div>' : '<div class="avatar placeholder mx-auto absolute -top-14 left-1/2 -translate-x-1/2">
                         <div class="bg-primary text-primary-content rounded-full w-24 ring ring-primary ring-offset-base-100 ring-offset-2">

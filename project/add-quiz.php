@@ -1,5 +1,5 @@
 <?php
-require_once 'includes/config_session.inc.php';
+require_once './includes/config_session.inc.php';
 if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     die();
@@ -23,13 +23,13 @@ $quizView = new QuizView();
 
 <body>
     <?php
-    include_once 'includes/navbar.inc.php';
+    include_once './navbar.partial.php';
     ?>
     <div class="w-full">
         <div class="mx-auto w-full card md:w-4/5 max-w-[70rem] bg-base-200 shadow-xl my-3">
             <div class="card-body">
                 <h2 class="card-title text-3xl mb-3">Add quiz</h2>
-                <form action="includes/add-quiz.php" class="flex flex-col gap-4" method="post">
+                <form action="./includes/add-quiz.php" class="flex flex-col gap-4" method="post">
 
                     <div class="flex flex-col md:flex-row gap-4">
                         <label class="form-control w-full">

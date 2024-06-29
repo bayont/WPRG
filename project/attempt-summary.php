@@ -1,5 +1,5 @@
 <?php
-require_once 'includes/config_session.inc.php';
+require_once './includes/config_session.inc.php';
 
 require 'classes/dbh.class.php';
 require 'classes/attempt/attempt.abstract.class.php';
@@ -34,8 +34,8 @@ if (!isset($_SESSION['user_id'])) {
 <body>
     <div class="flex flex-col gap-1">
         <?php
-        include_once 'includes/navbar.inc.php';
-        include "includes/toast.inc.php";
+        include_once './navbar.partial.php';
+        include "./includes/toast.inc.php";
         ?>
 
         <div class="flex justify-center">

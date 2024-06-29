@@ -7,6 +7,11 @@ require_once '../classes/permission/permission-contr.class.php';
 
 $permissionContr = new PermissionController();
 
+if (!isset($_POST['uid'])) {
+    header('Location: ../index.php');
+    die();
+}
+
 if ($_POST['uid'] == $_SESSION['user_id']) {
     if (!$permissionContr->userHasPermission($_SESSION['user_id'], 'edit_own_profile')) {
         header('Location: ../insufficient-permissions.php');
@@ -34,7 +39,9 @@ if (isset($_FILES['avatar'])) {
             if ($file_size <= 2097152) {
                 $file_name_new = uniqid('', true) . '.' . $file_ext;
                 $file_destination = '../uploads/' . $file_name_new;
-                move_uploaded_file($file_tmp, $file_destination);
+                if (move_uploaded_file($file_tmp, $file_destination)) {
+                    $file_uploaded = true;
+                }
             }
         }
     }
@@ -50,7 +57,7 @@ $profileContr = new ProfileController();
 $signupContr = new SignupController();
 
 
-if (isset($file_name_new)) {
+if (isset($file_uploaded) && $file_uploaded) {
     $profileContr->setAvatar($_SESSION['user_id'], $file_name_new);
 }
 
@@ -66,7 +73,7 @@ if (isset($_POST['password']) && isset($_POST['retype_password'])) {
     $retypePassword = $_POST['retype_password'];
     if ($signupContr->isPasswordValid($newPassword) && $signupContr->isPasswordRepeatValid($newPassword, $retypePassword)) {
         $profileContr->setNewPassword($_SESSION['user_id'], $newPassword);
-        require_once './logout.inc.php';
+        header('Location ./logout.inc.php');
         die();
     }
 }
