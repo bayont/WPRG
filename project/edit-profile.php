@@ -223,7 +223,7 @@ $avatarUrl = '';
             }
         }
         if (!!profileUrl) {
-            showAvatar('./uploads/'.profileUrl);
+            showAvatar('./uploads/' + profileUrl);
         } else {
             showPlaceholder();
         }

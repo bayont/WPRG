@@ -58,13 +58,13 @@ $signupContr = new SignupController();
 
 
 if (isset($file_uploaded) && $file_uploaded) {
-    $profileContr->setAvatar($_SESSION['user_id'], $file_name_new);
+    $profileContr->setAvatar($_POST['uid'], $file_name_new);
 }
 
 if (isset($_POST['username'])) {
     $newUsername = $_POST['username'];
     if ($signupContr->isUsernameValid($newUsername) && !$signupContr->isUsernameTaken($newUsername)) {
-        $profileContr->setNewUsername($_SESSION['user_id'], $newUsername);
+        $profileContr->setNewUsername($_POST['uid'], $newUsername);
     }
 }
 
@@ -72,10 +72,10 @@ if (isset($_POST['password']) && isset($_POST['retype_password'])) {
     $newPassword = $_POST['password'];
     $retypePassword = $_POST['retype_password'];
     if ($signupContr->isPasswordValid($newPassword) && $signupContr->isPasswordRepeatValid($newPassword, $retypePassword)) {
-        $profileContr->setNewPassword($_SESSION['user_id'], $newPassword);
+        $profileContr->setNewPassword($_POST['uid'], $newPassword);
         header('Location ./logout.inc.php');
         die();
     }
 }
 
-header('Location: ../profile.php?id=' . $_SESSION['user_id']);
+header('Location: ../profile.php?id=' . $_POST['uid']);
