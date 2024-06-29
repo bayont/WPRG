@@ -197,7 +197,7 @@ $avatarUrl = '';
     </div>
 
     <script>
-        const profileUrl = '<?php echo './uploads/' . $userDetails['avatar_url'] ?>';
+        const profileUrl = '<?php echo $userDetails['avatar_url'] ?>';
 
         function showPlaceholder() {
             const avatar = document.querySelector('#avatar');
@@ -218,13 +218,12 @@ $avatarUrl = '';
             placeholder.classList.remove('block');
             placeholder.classList.add('hidden');
             if (src) {
-                console.log(src)
                 const preview = document.querySelector("#avatar-preview");
                 preview.src = src;
             }
         }
         if (!!profileUrl) {
-            showAvatar(profileUrl);
+            showAvatar('./uploads/'.profileUrl);
         } else {
             showPlaceholder();
         }
