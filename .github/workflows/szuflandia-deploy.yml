@@ -1,0 +1,22 @@
+name: Deploy php files to Szuflandia
+on:
+  push:
+    branches: ["deploy-to-szuflandia"]
+  workflow_dispatch:
+
+jobs:
+    deploy:
+      runs-on: ubuntu-latest
+      name: deploy
+      steps:
+          - name: Checkout
+            uses: actions/checkout@v4
+          - name: deploy files
+            uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+            with:
+                username: 's29606'
+                server: 'szuflandia.pjwstk.edu.pl'
+                ssh_private_key: ${{ secrets.SZUFLANDIA_SSH }} 
+                local_path: './project/*'
+                remote_path: '~/public_html/WPRG/'
+                sftpArgs: '-o ConnectTimeout=5'
