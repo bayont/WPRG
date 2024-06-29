@@ -86,7 +86,7 @@ require_once 'classes/profile/profile-view.class.php';
                                                         ?>
                                                             <div class="avatar">
                                                                 <div class="rounded-full h-12 w-12">
-                                                                    <img src="<?php echo $user['avatar_url'] ?>" alt="Avatar" />
+                                                                    <img src="<?php echo './uploads/' . $user['avatar_url'] ?>" alt="Avatar" />
                                                                 </div>
                                                             </div>
                                                         <?php

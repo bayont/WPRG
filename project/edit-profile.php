@@ -30,7 +30,7 @@ if (isset($_GET['id']) && $_GET['id'] != $user_id) {
 $profileView = new ProfileView();
 
 $userDetails = $profileView->getPublicProfileDetails($user_id);
-$avatarUrl = ''; //$userDetails['avatar_url'];
+$avatarUrl = './uploads/' . $userDetails['avatar_url'];
 
 ?>
 <!DOCTYPE html>

@@ -59,7 +59,7 @@ $canEdit = $logged_in && (($uid == $_SESSION['user_id'] && $permissionView->user
                     <?php
                     echo isset($userDetails['avatar_url']) ? '<div class="avatar mx-auto absolute -top-14 left-1/2 -translate-x-1/2">
                             <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                                <img src="' . $userDetails['avatar_url'] . '" />
+                                <img src="./uploads/' . $userDetails['avatar_url'] . '" />
                             </div>
                         </div>' : '<div class="avatar placeholder mx-auto absolute -top-14 left-1/2 -translate-x-1/2">
                         <div class="bg-primary text-primary-content rounded-full w-24 ring ring-primary ring-offset-base-100 ring-offset-2">
