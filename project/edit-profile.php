@@ -30,7 +30,7 @@ if (isset($_GET['id']) && $_GET['id'] != $user_id) {
 $profileView = new ProfileView();
 
 $userDetails = $profileView->getPublicProfileDetails($user_id);
-$avatarUrl = './uploads/' . $userDetails['avatar_url'];
+$avatarUrl = '';
 
 ?>
 <!DOCTYPE html>
@@ -197,7 +197,7 @@ $avatarUrl = './uploads/' . $userDetails['avatar_url'];
     </div>
 
     <script>
-        const profileUrl = '<?php echo $userDetails['avatar_url'] ?>';
+        const profileUrl = '<?php echo './uploads' . $userDetails['avatar_url'] ?>';
 
         function showPlaceholder() {
             const avatar = document.querySelector('#avatar');
