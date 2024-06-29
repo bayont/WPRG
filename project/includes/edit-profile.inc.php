@@ -7,6 +7,11 @@ require_once '../classes/permission/permission-contr.class.php';
 
 $permissionContr = new PermissionController();
 
+if (!isset($_POST['uid'])) {
+    header('Location: ../index.php');
+    die();
+}
+
 if ($_POST['uid'] == $_SESSION['user_id']) {
     if (!$permissionContr->userHasPermission($_SESSION['user_id'], 'edit_own_profile')) {
         header('Location: ../insufficient-permissions.php');
@@ -66,7 +71,7 @@ if (isset($_POST['password']) && isset($_POST['retype_password'])) {
     $retypePassword = $_POST['retype_password'];
     if ($signupContr->isPasswordValid($newPassword) && $signupContr->isPasswordRepeatValid($newPassword, $retypePassword)) {
         $profileContr->setNewPassword($_SESSION['user_id'], $newPassword);
-        require_once './logout.inc.php';
+        header('Location ./logout.inc.php');
         die();
     }
 }

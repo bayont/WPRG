@@ -56,7 +56,7 @@ if (isset($_SESSION['errors'])) {
                 <div class="text-center lg:text-left">
                     <h1 class="text-5xl font-bold whitespace-nowrap">Sign up now!</h1>
                     <p class="py-6 whitespace-nowrap">
-                        Already have an account? <a href="/login.php" class="after:content-['_↗'] link link-primary">Login</a>
+                        Already have an account? <a href="./login.php" class="after:content-['_↗'] link link-primary">Login</a>
                     </p>
                 </div>
                 <div class="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
