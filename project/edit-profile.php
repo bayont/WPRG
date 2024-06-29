@@ -197,7 +197,7 @@ $avatarUrl = '';
     </div>
 
     <script>
-        const profileUrl = '<?php echo './uploads' . $userDetails['avatar_url'] ?>';
+        const profileUrl = '<?php echo './uploads/' . $userDetails['avatar_url'] ?>';
 
         function showPlaceholder() {
             const avatar = document.querySelector('#avatar');
