@@ -18,5 +18,5 @@ jobs:
                 server: 'szuflandia.pjwstk.edu.pl'
                 ssh_private_key: ${{ secrets.SZUFLANDIA_SSH }} 
                 local_path: './project/*'
-                remote_path: '~/public_html/WPRG/'
+                remote_path: 'public_html/WPRG/'
                 sftpArgs: '-o ConnectTimeout=5'
