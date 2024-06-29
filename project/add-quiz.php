@@ -23,7 +23,7 @@ $quizView = new QuizView();
 
 <body>
     <?php
-    include_once './includes/navbar.inc.php';
+    include_once './navbar.partial.php';
     ?>
     <div class="w-full">
         <div class="mx-auto w-full card md:w-4/5 max-w-[70rem] bg-base-200 shadow-xl my-3">

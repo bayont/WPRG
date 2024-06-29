@@ -50,7 +50,7 @@ $canEdit = $logged_in && (($uid == $_SESSION['user_id'] && $permissionView->user
 <body>
     <div class="flex flex-col gap-1 min-h-screen">
         <?php
-        include_once './includes/navbar.inc.php';
+        include_once './navbar.partial.php';
         ?>
 
         <div class="flex-1 flex justify-center">

@@ -17,7 +17,7 @@ require_once './includes/config_session.inc.php';
     <div class="flex flex-col gap-1 min-h-screen">
 
         <?php
-        include_once './includes/navbar.inc.php';
+        include_once './navbar.partial.php';
         ?>
 
         <div class="hero flex-1 bg-base-200">

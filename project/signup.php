@@ -46,7 +46,7 @@ if (isset($_SESSION['errors'])) {
     <div class="flex flex-col gap-1 min-h-screen">
 
         <?php
-        include_once './includes/navbar.inc.php';
+        include_once './navbar.partial.php';
         $username = $_GET['username'] ?? '';
 
         ?>

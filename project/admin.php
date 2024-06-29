@@ -42,7 +42,7 @@ require_once 'classes/profile/profile-view.class.php';
 <body>
     <div class="flex flex-col gap-1 min-h-screen">
         <?php
-        include_once './includes/navbar.inc.php';
+        include_once './navbar.partial.php';
         ?>
 
         <div class="flex-1 flex justify-center">

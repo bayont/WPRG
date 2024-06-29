@@ -50,7 +50,7 @@ if (!$attempt_id) {
 <body>
     <div class="w-full h-svh flex flex-col overflow-hidden">
         <?php
-        include_once './includes/navbar.inc.php';
+        include_once './navbar.partial.php';
         ?>
         <div class="p-2 mx-auto w-full md:w-4/5 lg:w-3/4 max-w-[50rem] my-3 flex flex-col items-center gap-3 h-full">
             <div class="mt-4">

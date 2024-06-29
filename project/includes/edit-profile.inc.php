@@ -39,7 +39,9 @@ if (isset($_FILES['avatar'])) {
             if ($file_size <= 2097152) {
                 $file_name_new = uniqid('', true) . '.' . $file_ext;
                 $file_destination = '../uploads/' . $file_name_new;
-                move_uploaded_file($file_tmp, $file_destination);
+                if (move_uploaded_file($file_tmp, $file_destination)) {
+                    $file_uploaded = true;
+                }
             }
         }
     }
@@ -55,7 +57,7 @@ $profileContr = new ProfileController();
 $signupContr = new SignupController();
 
 
-if (isset($file_name_new)) {
+if (isset($file_uploaded) && $file_uploaded) {
     $profileContr->setAvatar($_SESSION['user_id'], $file_name_new);
 }
 

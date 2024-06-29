@@ -10,7 +10,7 @@
 
 <body>
     <?php
-    include_once './includes/navbar.inc.php';
+    include_once './navbar.partial.php';
     ?>
     <main>
         <h1>Dodaj samochód</h1>

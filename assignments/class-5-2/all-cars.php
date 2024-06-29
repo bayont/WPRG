@@ -11,7 +11,7 @@
 
 <body>
     <?php
-    include_once './includes/navbar.inc.php';
+    include_once './navbar.partial.php';
     require_once './includes/dbh.inc.php';
     $query = 'SELECT * FROM samochody ORDER BY rok_produkcji DESC';
     $stmt = $dbh->prepare($query);

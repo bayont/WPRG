@@ -114,7 +114,7 @@ $avatarUrl = './uploads/' . $userDetails['avatar_url'];
 <body>
     <div class="flex flex-col gap-1 min-h-screen">
         <?php
-        include_once './includes/navbar.inc.php';
+        include_once './navbar.partial.php';
         ?>
 
         <div class="flex-1 flex justify-center">

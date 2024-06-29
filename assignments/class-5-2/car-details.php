@@ -11,7 +11,7 @@
 
 <body>
     <?php
-    include_once './includes/navbar.inc.php';
+    include_once './navbar.partial.php';
     require_once './includes/dbh.inc.php';
 
     $id = $_GET['id'];
